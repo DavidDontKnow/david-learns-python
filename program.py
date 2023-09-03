@@ -31,8 +31,19 @@ def check_win(player, computer):
             return "Computer Wins!"
 
 
-choices = get_choices()
+def play_again():
+    answer = input("Do you want to play again? y/n:")
+    if answer == "y":
+        start_game()
+    else:
+        print("Thank you for playing!")
 
-result = check_win(choices["player"], choices["computer"])
 
-print(result)
+def start_game():
+    choices = get_choices()
+    result = check_win(choices["player"], choices["computer"])
+    print(result)
+    play_again()
+
+
+start_game()
